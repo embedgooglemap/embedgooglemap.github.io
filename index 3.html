@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Free Google maps code generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <style>
+        #formap {
+            overflow: hidden;
+            transition: all 0.5s;
+            width: 600px;
+            height: 400px;
+            margin: 1rem auto;
+        }
+        @media screen and (max-width:600px){
+          #formap {
+            width:100%;
+          }
+        }
+        i.material-icons {
+            vertical-align: middle;
+        }
+        form {
+            padding-top: 2rem;
+        }
+        #gmapcode {
+            height: 7em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="teal darken-4 white-text">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3 class="center-align">Free Google maps code generator</h3>
+                </div>
+            </div>
+        </div>
+        <nav class="green darken-4">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <!--
+              <a href="#" class="brand-logo">G</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down">
+              -->
+                        <ul class="left">
+                            <li>
+                                <a href="#generator">Cenerator</a>
+                            </li>
+                            <li>
+                                <a href="#sponsors">Sponsors</a>
+                            </li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <form action="#" id="generator" class="scrollspy">
+                <div class="row card-panel">
+                    <div class="col s11 m8">
+                        <div class="input-field">
+                            <i class="material-icons  prefix">search</i>
+                            <input type="text" name="s" id="s" value="university of san francisco" placeholder="Enter Adress" data-role="none">
+                            <label for="s">Enter your Address:</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field center-align">
+                            <button id="h" data-target="modal1" class="btn btn-large  modal-trigger">Get HTML-Code</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-panel">
+                    <div class="col s3">
+                        <h6>Satellite </h6>
+                        <div class="input-field">
+                            <div class="switch">
+                                <label>
+                        Off
+                        <input type="checkbox" id="ic" name="ic">
+                        <span class="lever"></span>
+                        On
+                      </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <h6 class="mapz">Map Zoom </h6>
+                        <div class="input-field">
+                            <p class="range-field">
+                                <input id="zoom" type="range" min="1" max="20" step="1" value="13">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <h6>Width (px): </h6>
+                        <p class="range-field">
+                            <input type="range" name="width" id="width" min="240" max="1080" step="10" value="600" placeholder="" class="numeric">
+                        </p>
+                    </div>
+                    <div class="col s3">
+                        <h6>Height (px):</h6>
+                        <p class="range-field">
+                            <input type="range" name="height" id="height" min="240" max="1080" step="10" value="400" placeholder="" class="numeric">
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div id="formap">
+                    <iframe width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=university+of+san+francisco&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Code</h4>
+                        <p>Copy & Paste this Google-Maps-Code to your Website:</p>
+                        <textarea id="gmapcode" rows="5">
+
+              </textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row scrollspy" id="sponsors">
+                <div class="col s12 card-panel">
+                    <h3>Sponsors</h3>
+                    <ul>
+                      <li><p><a href="https://embedmap.github.io/google/"><i class="material-icons">web</i> embedmap.github.io</a></p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row scrollspy" id="about">
+                <div class="col s12 card-panel">
+                    <h3>About</h3>
+                    <p>Google Maps is the most popular online mapping service with interactive zooming and panning, directions, location details, satellite views.
+                      You can include a Google Map on your site that includes a pin dropped at the address of a location. This is useful for your own business, but can also be used by bloggers, reviewers, and other websites that discuss specific establishments. </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer grey darken-4 white-text">
+        <div class="container">
+            <div class="row" style="margin-bottom: 0;">
+                <div class="col s12">
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; 2020 embedmap.github.io/google/
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
+    <script>
+        (function($) {
+
+            function rebuildmap() {
+                url = "https://maps.google.com/maps?q=";
+                url += encodeURI($('#s').val());
+                url += '&t=';
+                if ($('#ic').is(':checked')) {
+                    url += 'k';
+                } else {
+                    url += '';
+                }
+                url += '&z=' + $('#zoom').val();
+                url += '&ie=UTF8&iwloc=&output=embed';
+
+                $('#formap').empty();
+
+                $('<iframe>', {
+                    src: url,
+                    id: 'gmap_canvas',
+                    frameborder: 0,
+                    scrolling: 'no',
+                    width: $('#width').val(),
+                    height: $('#height').val()
+                }).appendTo('#formap');
+                var gcode = $('#formap').html();
+                gcode += '<a href="https://embedmap.github.io/google/">map generator</a>';
+                $('#gmapcode').val(gcode);
+            }
+
+            var timer;
+
+            $('select').formSelect();
+            $('.modal').modal();
+            $('.scrollspy').scrollSpy();
+
+            rebuildmap();
+
+            function startrebuild() {
+                clearTimeout(timer);
+                timer = setTimeout(rebuildmap, 500);
+            }
+            $('#s,#zoom,#ic').on('change', startrebuild);
+            $('#s').on('keyup', startrebuild);
+            $("#width,#height").on("change", function() {
+                $("#gmap_canvas").css({
+                    'width': $('#width').val() + 'px',
+                    'height': $('#height').val() + 'px'
+                });
+                $("#formap").css({
+                    'width': $('#width').val() + 'px',
+                    'height': $('#height').val() + 'px'
+                });
+            });
+        })(jQuery)
+    </script>
+
+</body>
+
+</html>
