@@ -37,7 +37,7 @@
         }
         @media screen and (max-width:600px){
           #formap {
-            width:100%;
+            max-width:100%;
           }
         }
         i.material-icons {
@@ -253,6 +253,12 @@ Google Maps has many uses for both personal and business use. It can be used to 
                 url += '&z=' + $('#zoom').val();
                 url += '&ie=UTF8&iwloc=&output=embed';
 
+                let width = $('#width').val();
+
+                if (window.innerWidth < width) {
+                    width = window.innerWidth - 21;
+                }
+
                 $('#formap').empty();
 
                 $('<iframe>', {
@@ -260,10 +266,19 @@ Google Maps has many uses for both personal and business use. It can be used to 
                     id: 'gmap_canvas',
                     frameborder: 0,
                     scrolling: 'no',
-                    width: $('#width').val(),
+                    width: width,
                     height: $('#height').val()
                 }).appendTo('#formap');
-                var gcode = $('#formap').html();
+
+                let gcode = $('<iframe>', {
+                    src: url,
+                    id: 'gmap_canvas',
+                    frameborder: 0,
+                    scrolling: 'no',
+                    width: $('#width').val(),
+                    height: $('#height').val()
+                }).prop('outerHTML');
+                
                 gcode += '<a href="https://embedgooglemap.github.io" style="display:none;">map generator</a>';
                 $('#gmapcode').val(gcode);
             }
@@ -283,15 +298,23 @@ Google Maps has many uses for both personal and business use. It can be used to 
             $('#s,#zoom,#ic').on('change', startrebuild);
             $('#s').on('keyup', startrebuild);
             $("#width,#height").on("change", function() {
+                let width = $('#width').val();
+
+                if (window.innerWidth < width) {
+                    width = window.innerWidth - 21;
+                }
+
                 $("#gmap_canvas").css({
-                    'width': $('#width').val() + 'px',
+                    'width': width + 'px',
                     'height': $('#height').val() + 'px'
                 });
                 $("#formap").css({
-                    'width': $('#width').val() + 'px',
+                    'width': width + 'px',
                     'height': $('#height').val() + 'px'
                 });
             });
+
+            
         })(jQuery)
     </script>
 
