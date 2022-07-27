@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Google map page</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="gmap" id="formap">
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script>
+        (function($) {
+            var params = [];
+            location.search.substr(1).split("&").forEach((i)=>{let x=i.split("=");params[x[0]]=x[1];})
+
+            const _s = params['s'];
+            const _ic = parseInt(params['ic']);
+            const _z = parseInt(params['zoom']);
+            let _width = parseInt(params['width']);
+            let _height = parseInt(params['height']);
+
+
+            function _buildmap() {
+                let url = "https://maps.google.com/maps?q=";
+                url += encodeURI(_s);
+                url += '&t=';
+                if (_ic) {
+                    url += 'k';
+                } else {
+                    url += '';
+                }
+                url += '&z=' + _z;
+                url += '&ie=UTF8&iwloc=&output=embed&hl=en';
+
+
+                if (window.innerWidth < _width) {
+                    _width = window.innerWidth - 21;
+                }
+
+                $('#formap').empty();
+
+                $("<iframe>", {
+                    src: url,
+                    id: "gmap",
+                    style: 'border:none;width:100%'
+                })
+                .attr("width",_width)
+                .attr("height",_height)
+                .appendTo('#formap');
+            }
+
+            _buildmap();
+           
+        })(jQuery)
+        // code: <div class="map"><iframe src="https://maps.google.com/maps?q=kirovograd&t=k&z=16&ie=UTF8&iwloc=&output=embed&hl=en" id="gmap" style="border:none;width:100%" width="500" height="500"></iframe><a href="https://embedgooglemap.github.io" style="display:none;">map generator</a></div>
+    </script>
+</body>
+</html>
