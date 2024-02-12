@@ -1,53 +1,518 @@
 {
-  "name": "map_exe",
-  "short_name": "exe",
-  "theme_color": "#ffff",
-  "background_color": "#fff",
+  "background_color": "#a38c8c",
+  "description": "Mercury Jets is a white glove private charter provider. Tasked with providing the most suitable aircraft for each assignment, Mercury Jets is an independent entity operating on behalf of the client. \n\nOur success is rated by the satisfaction level of our passengers, and we know that we are only as good as our last flight. For our executives, account managers, and charter coordinators, each charter is a critical task for the overall success of the company.\n\nIn Greek Mythology, Mercury was known for quick reaction and incredible speed and was dispatched when the timing was critical, and effective performance was everything. Fast, Reliable, and Efficient – the very same principles on which Mercury Jets was founded. When time is critical, we provide on-demand worldwide air charter solutions for your comfort and safety.\n\nAmong our clients are Fortune 500 corporations, family offices, celebrities, captains of industry as well as the US Government, and various NGOs.  \n\nAt Mercury Jets we provide the most suitable aircraft for your needs, verify compliance with the strictest regulations and plan your flight from its origin until you safely arrive at your destination. We value your time and budget – a feature that rewards us with many returning customers. Our team of experienced and seasoned air charter operators is a phone call away.",
+  "dir": "auto",
   "display": "standalone",
+  "name": "GMapGenerator",
   "orientation": "portrait",
-  "scope": "/",
-  "start_url": ".",
+  "scope": "/multiform/",
+  "short_name": "GMG",
+  "start_url": "/multiform/pwa.html",
+  "theme_color": "#3d95d3",
+  "categories": [
+    "travel"
+  ],
+  "handle_links": "auto",
+  "launch_handler": {
+    "client_mode": [
+      "navigate-existing, auto"
+    ]
+  },
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "./images/screenshots/screenshot1.png",
+      "type": "image/png",
+      "sizes": "387x813",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "./images/screenshots/screenshot2.png",
+      "type": "image/png",
+      "sizes": "1225x838",
+      "form_factor": "wide"
+    }
+  ],
   "icons": [
     {
-      "src": "images/icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png"
+      "src": "images/windows11/SmallTile.scale-100.png",
+      "sizes": "71x71"
     },
     {
-      "src": "images/icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
+      "src": "images/windows11/SmallTile.scale-125.png",
+      "sizes": "89x89"
     },
     {
-      "src": "images/icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png"
+      "src": "images/windows11/SmallTile.scale-150.png",
+      "sizes": "107x107"
     },
     {
-      "src": "images/icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png"
+      "src": "images/windows11/SmallTile.scale-200.png",
+      "sizes": "142x142"
     },
     {
-      "src": "images/icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "src": "images/windows11/SmallTile.scale-400.png",
+      "sizes": "284x284"
     },
     {
-      "src": "images/icons/icon-192x192.png",
+      "src": "images/windows11/Square150x150Logo.scale-100.png",
+      "sizes": "150x150"
+    },
+    {
+      "src": "images/images/windows11/Square150x150Logo.scale-125.png",
+      "sizes": "188x188"
+    },
+    {
+      "src": "images/windows11/Square150x150Logo.scale-150.png",
+      "sizes": "225x225"
+    },
+    {
+      "src": "images/windows11/Square150x150Logo.scale-200.png",
+      "sizes": "300x300"
+    },
+    {
+      "src": "images/windows11/Square150x150Logo.scale-400.png",
+      "sizes": "600x600"
+    },
+    {
+      "src": "images/windows11/Wide310x150Logo.scale-100.png",
+      "sizes": "310x150"
+    },
+    {
+      "src": "images/windows11/Wide310x150Logo.scale-125.png",
+      "sizes": "388x188"
+    },
+    {
+      "src": "images/windows11/Wide310x150Logo.scale-150.png",
+      "sizes": "465x225"
+    },
+    {
+      "src": "images/windows11/Wide310x150Logo.scale-200.png",
+      "sizes": "620x300"
+    },
+    {
+      "src": "images/windows11/Wide310x150Logo.scale-400.png",
+      "sizes": "1240x600"
+    },
+    {
+      "src": "images/windows11/LargeTile.scale-100.png",
+      "sizes": "310x310"
+    },
+    {
+      "src": "images/windows11/LargeTile.scale-125.png",
+      "sizes": "388x388"
+    },
+    {
+      "src": "images/windows11/LargeTile.scale-150.png",
+      "sizes": "465x465"
+    },
+    {
+      "src": "images/windows11/LargeTile.scale-200.png",
+      "sizes": "620x620"
+    },
+    {
+      "src": "images/windows11/LargeTile.scale-400.png",
+      "sizes": "1240x1240"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.scale-100.png",
+      "sizes": "44x44"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.scale-125.png",
+      "sizes": "55x55"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.scale-150.png",
+      "sizes": "66x66"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.scale-200.png",
+      "sizes": "88x88"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.scale-400.png",
+      "sizes": "176x176"
+    },
+    {
+      "src": "images/windows11/StoreLogo.scale-100.png",
+      "sizes": "50x50"
+    },
+    {
+      "src": "images/windows11/StoreLogo.scale-125.png",
+      "sizes": "63x63"
+    },
+    {
+      "src": "images/windows11/StoreLogo.scale-150.png",
+      "sizes": "75x75"
+    },
+    {
+      "src": "images/windows11/StoreLogo.scale-200.png",
+      "sizes": "100x100"
+    },
+    {
+      "src": "images/windows11/StoreLogo.scale-400.png",
+      "sizes": "200x200"
+    },
+    {
+      "src": "images/windows11/SplashScreen.scale-100.png",
+      "sizes": "620x300"
+    },
+    {
+      "src": "images/windows11/SplashScreen.scale-125.png",
+      "sizes": "775x375"
+    },
+    {
+      "src": "images/windows11/SplashScreen.scale-150.png",
+      "sizes": "930x450"
+    },
+    {
+      "src": "images/windows11/SplashScreen.scale-200.png",
+      "sizes": "1240x600"
+    },
+    {
+      "src": "images/windows11/SplashScreen.scale-400.png",
+      "sizes": "2480x1200"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-20.png",
+      "sizes": "20x20"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-24.png",
+      "sizes": "24x24"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-30.png",
+      "sizes": "30x30"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-36.png",
+      "sizes": "36x36"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-40.png",
+      "sizes": "40x40"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-44.png",
+      "sizes": "44x44"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-60.png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-80.png",
+      "sizes": "80x80"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.targetsize-256.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-20.png",
+      "sizes": "20x20"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-24.png",
+      "sizes": "24x24"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-30.png",
+      "sizes": "30x30"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-36.png",
+      "sizes": "36x36"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-40.png",
+      "sizes": "40x40"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-44.png",
+      "sizes": "44x44"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-60.png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-80.png",
+      "sizes": "80x80"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-unplated_targetsize-256.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-20.png",
+      "sizes": "20x20"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-24.png",
+      "sizes": "24x24"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-30.png",
+      "sizes": "30x30"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-36.png",
+      "sizes": "36x36"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-40.png",
+      "sizes": "40x40"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-44.png",
+      "sizes": "44x44"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-60.png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-80.png",
+      "sizes": "80x80"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/windows11/Square44x44Logo.altform-lightunplated_targetsize-256.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "images/android/android-launchericon-512-512.png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "images/android/android-launchericon-192-192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/android/android-launchericon-144-144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "images/android/android-launchericon-96-96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/android/android-launchericon-72-72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "images/android/android-launchericon-48-48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/ios/16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "images/ios/20.png",
+      "sizes": "20x20"
+    },
+    {
+      "src": "images/ios/29.png",
+      "sizes": "29x29"
+    },
+    {
+      "src": "images/ios/32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "images/ios/40.png",
+      "sizes": "40x40"
+    },
+    {
+      "src": "images/ios/50.png",
+      "sizes": "50x50"
+    },
+    {
+      "src": "images/ios/57.png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "images/ios/58.png",
+      "sizes": "58x58"
+    },
+    {
+      "src": "images/ios/60.png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "images/ios/64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "images/ios/72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "images/ios/76.png",
+      "sizes": "76x76"
+    },
+    {
+      "src": "images/ios/80.png",
+      "sizes": "80x80"
+    },
+    {
+      "src": "images/ios/87.png",
+      "sizes": "87x87"
+    },
+    {
+      "src": "images/ios/100.png",
+      "sizes": "100x100"
+    },
+    {
+      "src": "images/ios/114.png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "images/ios/120.png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "images/ios/128.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "images/ios/144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "images/ios/152.png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "images/ios/167.png",
+      "sizes": "167x167"
+    },
+    {
+      "src": "images/ios/180.png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "images/ios/192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "purpose": "any"
     },
     {
-      "src": "images/icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
+      "src": "images/ios/256.png",
+      "sizes": "256x256"
     },
     {
-      "src": "images/icons/icon-512x512.png",
+      "src": "images/ios/512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/ios/1024.png",
+      "sizes": "1024x1024"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "GMapGenerator",
+      "short_name": "GMG",
+      "description": "Private air charter tool",
+      "url": "./images/shortcuts/und?source=pwa",
+      "icons": [
+        {
+          "src": "/images/shortcuts/und.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "windows",
+      "url": "embedgooglemap.github.io",
+      "id": "embedgooglemap"
+    }
+  ],
+  "lang": "en",
+  "id": "embedgooglemap.github.io",
+  "display_override": [
+    "standalone",
+    "window-controls-overlay"
+  ],
+  "edge_side_panel": {
+    "preferred_width": 1
+  }
 }
