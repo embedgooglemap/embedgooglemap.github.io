@@ -1,98 +1,54 @@
-const staticCacheName = 'static-cache-v0';
+// This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
 
-const staticAssets = [
-    './pwa.html',
-    // './script/jquery.auto-complete.min.js',
-    // './script/pickmeup.min.js',
-    // './script/jquery.colorbox.min.js'
+const CACHE = "pwabuilder-offline-page";
 
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-//    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js',
-//    'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'
-];
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
+const offlineFallbackPage = "ToDo-replace-this-name.html";
 
-//const staticCacheName = 'static-cache-v0';
-const dynamicCacheName = 'dynamic-cache-v0';
-
-self.addEventListener('install', async event => {
-    const cache = await caches.open(staticCacheName);
-    await cache.addAll(staticAssets);
-    console.log('Service worker has been installed');
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
 });
 
-self.addEventListener('activate', async event => {
-    const cachesKeys = await caches.keys();
-    const checkKeys = cachesKeys.map(async key => {
-        if (![staticCacheName, dynamicCacheName].includes(key)) {
-            await caches.delete(key);
+self.addEventListener('install', async (event) => {
+  event.waitUntil(
+    caches.open(CACHE)
+      .then((cache) => cache.add(offlineFallbackPage))
+  );
+});
+
+if (workbox.navigationPreload.isSupported()) {
+  workbox.navigationPreload.enable();
+}
+
+workbox.routing.registerRoute(
+  new RegExp('/*'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: CACHE
+  })
+);
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () => {
+      try {
+        const preloadResp = await event.preloadResponse;
+
+        if (preloadResp) {
+          return preloadResp;
         }
-    });
-    await Promise.all(checkKeys);
-    console.log('Service worker has been activated');
+
+        const networkResp = await fetch(event.request);
+        return networkResp;
+      } catch (error) {
+
+        const cache = await caches.open(CACHE);
+        const cachedResp = await cache.match(offlineFallbackPage);
+        return cachedResp;
+      }
+    })());
+  }
 });
-
-//self.addEventListener('fetch', event => {
-//    console.log(`Trying to fetch ${event.request.url}`);
-//    event.respondWith(checkCache(event.request));
-//});
-
-async function checkCache(req) {
-    const cachedResponse = await caches.match(req);
-    return cachedResponse || checkOnline(req);
-}
-
-async function checkOnline(req) {
-    const cache = await caches.open(dynamicCacheName);
-    try {
-        const res = await fetch(req);
-        await cache.put(req, res.clone());
-        return res;
-    } catch (error) {
-        const cachedRes = await cache.match(req);
-        if (cachedRes) {
-            return cachedRes;
-        } else if (req.url.indexOf('.html') !== -1) {
-            return ;//caches.match('./offline.html');
-        } 
-        // else {
-        //     return caches.match('./images/no-image.jpg');
-        // }
-    }
-}
-
-// self.addEventListener('install', async event => {
-//     const cache = await caches.open(staticCacheName);
-//     await cache.addAll(staticAssets);
-//     console.log('Service worker has been installed');
-// });
-
-// self.addEventListener('activate', async event => {
-//     const cachesKeys = await caches.keys();
-//     const checkKeys = cachesKeys.map(async key => {
-//         if (staticCacheName !== key) {
-//             await caches.delete(key);
-//         }
-//     });
-//     await Promise.all(checkKeys);
-//     console.log('Service worker has been activated');
-// });
-
-// self.addEventListener('fetch', async event => {
-//     console.log(`Trying to fetch ${event.request.url}`);
-//     event.respondWith(caches.match(event.request).then(cachedResponse => {
-//         return cachedResponse || fetch(event.request)
-//     }));
-// }); 
-//             await caches.delete(key);
-//         }
-//     });
-//     await Promise.all(checkKeys);
-//     console.log('Service worker has been activated');
-// });
-
-// self.addEventListener('fetch', async event => {
-//     console.log(`Trying to fetch ${event.request.url}`);
-//     event.respondWith(caches.match(event.request).then(cachedResponse => {
-//         return cachedResponse || fetch(event.request)
-//     }));
-// }); 
