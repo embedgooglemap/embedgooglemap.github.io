@@ -5,9 +5,9 @@
   "display": "standalone",
   "name": "GMapGenerator",
   "orientation": "portrait",
-  "scope": "/multiform/",
+  "scope": "/embedgooglemap.github.io/",
   "short_name": "GMG",
-  "start_url": "/multiform/pwa.html",
+  "start_url": "/embedgooglemap.github.io/index.html",
   "theme_color": "#3d95d3",
   "categories": [
     "travel"
