@@ -1,6 +1,6 @@
 {
   "background_color": "#a38c8c",
-  "description": "Mercury Jets is a white glove private charter provider. Tasked with providing the most suitable aircraft for each assignment, Mercury Jets is an independent entity operating on behalf of the client. \n\nOur success is rated by the satisfaction level of our passengers, and we know that we are only as good as our last flight. For our executives, account managers, and charter coordinators, each charter is a critical task for the overall success of the company.\n\nIn Greek Mythology, Mercury was known for quick reaction and incredible speed and was dispatched when the timing was critical, and effective performance was everything. Fast, Reliable, and Efficient – the very same principles on which Mercury Jets was founded. When time is critical, we provide on-demand worldwide air charter solutions for your comfort and safety.\n\nAmong our clients are Fortune 500 corporations, family offices, celebrities, captains of industry as well as the US Government, and various NGOs.  \n\nAt Mercury Jets we provide the most suitable aircraft for your needs, verify compliance with the strictest regulations and plan your flight from its origin until you safely arrive at your destination. We value your time and budget – a feature that rewards us with many returning customers. Our team of experienced and seasoned air charter operators is a phone call away.",
+  "description": "GMapGenerator is a private air charter tool",
   "dir": "auto",
   "display": "standalone",
   "name": "GMapGenerator",
