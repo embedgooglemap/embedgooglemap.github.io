@@ -2,12 +2,9 @@ const staticCacheName = 'static-cache-v0';
 
 const staticAssets = [
     './index.html',
-    // './script/jquery.auto-complete.min.js',
-    // './script/pickmeup.min.js',
-    // './script/jquery.colorbox.min.js'
+    './map.html',
 ];
 
-//const staticCacheName = 'static-cache-v0';
 const dynamicCacheName = 'dynamic-cache-v0';
 
 self.addEventListener('install', async event => {
