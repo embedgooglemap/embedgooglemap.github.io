@@ -1,37 +1,57 @@
-const CACHE_NAME = 'cool-cache';
+const staticCacheName = 'static-cache-v0';
 
-// Add whichever assets you want to precache here:
-const PRECACHE_ASSETS = [
-    '/assets/',
+const staticAssets = [
     './index.html',
-]
+    // './script/jquery.auto-complete.min.js',
+    // './script/pickmeup.min.js',
+    // './script/jquery.colorbox.min.js'
+];
 
-// Listener for the install event - precaches our assets list on service worker install.
-self.addEventListener('install', event => {
-    event.waitUntil((async () => {
-        const cache = await caches.open(CACHE_NAME);
-        cache.addAll(PRECACHE_ASSETS);
-    })());
+//const staticCacheName = 'static-cache-v0';
+const dynamicCacheName = 'dynamic-cache-v0';
+
+self.addEventListener('install', async event => {
+    const cache = await caches.open(staticCacheName);
+    await cache.addAll(staticAssets);
+    console.log('Service worker has been installed');
 });
 
-self.addEventListener('activate', event => {
-  event.waitUntil(self.clients.claim());
+self.addEventListener('activate', async event => {
+    const cachesKeys = await caches.keys();
+    const checkKeys = cachesKeys.map(async key => {
+        if (![staticCacheName, dynamicCacheName].includes(key)) {
+            await caches.delete(key);
+        }
+    });
+    await Promise.all(checkKeys);
+    console.log('Service worker has been activated');
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(async () => {
-      const cache = await caches.open(CACHE_NAME);
+//self.addEventListener('fetch', event => {
+//    console.log(`Trying to fetch ${event.request.url}`);
+//    event.respondWith(checkCache(event.request));
+//});
 
-      // match the request to our cache
-      const cachedResponse = await cache.match(event.request);
+async function checkCache(req) {
+    const cachedResponse = await caches.match(req);
+    return cachedResponse || checkOnline(req);
+}
 
-      // check if we got a valid response
-      if (cachedResponse !== undefined) {
-          // Cache hit, return the resource
-          return cachedResponse;
-      } else {
-        // Otherwise, go to the network
-          return fetch(event.request)
-      };
-  });
-});
+async function checkOnline(req) {
+    const cache = await caches.open(dynamicCacheName);
+    try {
+        const res = await fetch(req);
+        await cache.put(req, res.clone());
+        return res;
+    } catch (error) {
+        const cachedRes = await cache.match(req);
+        if (cachedRes) {
+            return cachedRes;
+        } else if (req.url.indexOf('.html') !== -1) {
+            return ;//caches.match('./offline.html');
+        } 
+        // else {
+        //     return caches.match('./images/no-image.jpg');
+        // }
+    }
+}
