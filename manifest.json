@@ -1,12 +1,12 @@
 {
   "background_color": "#a38c8c",
-  "description": "GMG WebBoard is your go to application for quick doodles, notes, or sketches!",
+  "description": "Maps is the most popular online mapping service with interactive zooming and panning, directions, location details, satellite views. You can include a Google Map on your site that includes a pin dropped at the address of a location. This is useful for your own business, but can also be used by bloggers, reviewers, and other websites that discuss specific establishments.",
   "dir": "auto",
   "display": "standalone",
-  "name": "GMapGenerator",
+  "name": "MapGenerator",
   "orientation": "portrait",
   "scope": "/",
-  "short_name": "GMG",
+  "short_name": "MG",
   "start_url": ".",
   "theme_color": "#3d95d3",
   "categories": [
@@ -485,9 +485,9 @@
   ],
   "shortcuts": [
     {
-      "name": "GMapGenerator",
-      "short_name": "GMG",
-      "description": "Private air charter tool",
+      "name": "MapGenerator",
+      "short_name": "MG",
+      "description": "Map generator",
       "url": "./images/shortcuts/und.png",
       "icons": [
         {
