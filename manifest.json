@@ -1,6 +1,6 @@
 {
   "background_color": "#a38c8c",
-  "description": "GMapGenerator is a private air charter tool",
+  "description": "GMapGenerator is a ",
   "dir": "auto",
   "display": "standalone",
   "name": "GMapGenerator",
@@ -22,13 +22,13 @@
   "screenshots": [
     {
       "src": "",
-      "type": "images/screenshots/",
+      "type": "images/screenshots/screenshot1.png",
       "sizes": "387x813",
       "form_factor": "narrow"
     },
     {
       "src": "",
-      "type": "images/screenshots/",
+      "type": "images/screenshots/screenshot2.png",
       "sizes": "1225x838",
       "form_factor": "wide"
     }
@@ -488,7 +488,7 @@
       "name": "GMapGenerator",
       "short_name": "GMG",
       "description": "Private air charter tool",
-      "url": "./images/shortcuts/und?source=pwa",
+      "url": "./images/shortcuts/und.png",
       "icons": [
         {
           "src": "/images/shortcuts/und.png",
