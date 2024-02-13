@@ -6,7 +6,7 @@
   "name": "MapGenerator",
   "orientation": "portrait",
   "scope": "/",
-  "short_name": "MG",
+  "short_name": "GMG",
   "start_url": ".",
   "theme_color": "#3d95d3",
   "categories": [
@@ -486,7 +486,7 @@
   "shortcuts": [
     {
       "name": "MapGenerator",
-      "short_name": "MG",
+      "short_name": "GMG",
       "description": "Map generator",
       "url": "./images/shortcuts/und.png",
       "icons": [
