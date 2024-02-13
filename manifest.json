@@ -21,13 +21,13 @@
   "prefer_related_applications": false,
   "screenshots": [
     {
-      "src": "",
+      "src": "/images/screenshots/screenshot1.png",
       "type": "images/screenshots/screenshot1.png",
       "sizes": "387x813",
       "form_factor": "narrow"
     },
     {
-      "src": "",
+      "src": "/images/screenshots/screenshot2.png",
       "type": "images/screenshots/screenshot2.png",
       "sizes": "1225x838",
       "form_factor": "wide"
